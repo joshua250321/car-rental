@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FastCar Rentals</title>
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #1e2a38;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 1.2px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ff6f3c;
+    }
+
+    main {
+      flex: 1 0 auto;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero {
+      background-color: #ff6f3c;
+      color: #fff;
+      padding: 60px 30px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 20px rgba(255, 111, 60, 0.4);
+    }
+    .hero h2 {
+      margin: 0 0 15px;
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+    .hero button {
+      background-color: #fff;
+      color: #ff6f3c;
+      border: none;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .hero button:hover {
+      background-color: #ff4e11;
+      color: #fff;
+    }
+
+    .cars-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap: 30px;
+    }
+    .car-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .car-card:hover {
+      transform: translateY(-8px);
+    }
+    .car-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .car-card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .car-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 0 10px;
+      color: #1e2a38;
+    }
+    .car-description {
+      font-size: 0.95rem;
+      color: #666;
+      flex-grow: 1;
+      margin-bottom: 15px;
+    }
+    .car-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ff6f3c;
+    }
+
+    footer {
+      flex-shrink: 0;
+      background-color: #1e2a38;
+      color: #bbb;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.875rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        justify-content: center;
+      }
+      nav {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+      }
+      nav a {
+        margin: 0 12px;
+      }
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .hero button {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FastCar Rentals</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#cars">Cars</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <h2>Rent Your Dream Car Today</h2>
+      <p>Choose from our wide selection of cars at affordable prices.</p>
+      <button>Browse Cars</button>
+    </section>
+
+    <section class="cars-section" id="cars">
+      <article class="car-card" tabindex="0" aria-label="Toyota Camry rental - $45 per day">
+        <img src="https://images.unsplash.com/photo-1511914265872-308f9315522b?auto=format&fit=crop&w=400&q=60" alt="Toyota Camry" />
+        <div class="car-card-content">
+          <h3 class="car-title">Toyota Camry</h3>
+          <p class="car-description">A comfortable midsize sedan with excellent fuel economy.</p>
+          <p class="car-price">$45 / day</p>
+        </div>
+      </article>
+
+      <article class="car-card" tabindex="0" aria-label="Ford Mustang rental - $85 per day">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=400&q=60" alt="Ford Mustang" />
+        <div class="car-card-content">
+          <h3 class="car-title">Ford Mustang</h3>
+          <p class="car-description">Experience power and style with this iconic sports car.</p>
+          <p class="car-price">$85 / day</p>
+        </div>
+      </article>
+
+      <article class="car-card" tabindex="0" aria-label="Tesla Model 3 rental - $100 per day">
+        <img src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=400&q=60" alt="Tesla Model 3" />
+        <div class="car-card-content">
+          <h3 class="car-title">Tesla Model 3</h3>
+          <p class="car-description">Modern electric vehicle with autopilot and great range.</p>
+          <p class="car-price">$100 / day</p>
+        </div>
+      </article>
+
+      <article class="car-card" tabindex="0" aria-label="Jeep Wrangler rental - $75 per day">
+        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=60" alt="Jeep Wrangler" />
+        <div class="car-card-content">
+          <h3 class="car-title">Jeep Wrangler</h3>
+          <p class="car-description">For off-road adventures and open-air driving pleasure.</p>
+          <p class="car-price">$75 / day</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p>Contact us at <a href="mailto:info@fastcarrentals.com" style="color:#ff6f3c; text-decoration:none;">info@fastcarrentals.com</a> | Phone: +1 555-123-4567</p>
+    <p>© 2024 FastCar Rentals. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
